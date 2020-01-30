@@ -4,4 +4,27 @@
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 1px solid #f00; color: #f00;}
 .swiper{width: 100%;}
-
+#p_2{
+    top: 8rpx;
+    right:120rpx;
+    width: 10%;
+    height: 8%;
+    position: absolute;
+}
+#check{
+    top: 20rpx;
+    right:35rpx;
+    position: absolute;
+}
+#p_1{
+    top:15rpx;
+    right:120rpx;
+    width:9%;
+    height:7%;
+    position: absolute;
+}
+#check_1{
+    top: 28rpx;
+    right:35rpx;
+    position: absolute;
+}

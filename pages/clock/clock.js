@@ -6,6 +6,12 @@ Page({
   data: {
       currentData : 0,
   },
+    //事件处理函数 点击text
+    toast: function() {
+      wx.navigateTo({
+        url: '../Sign_in/Sign_in'
+      })
+    },
   /**
    * 生命周期函数--监听页面加载
    */

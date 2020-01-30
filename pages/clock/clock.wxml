@@ -5,12 +5,21 @@
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
   <swiper-item><view class='swiper_con'>
-      welcome come to 儿童
+      <view bindtap="toast" class="usermotto">
+            <image id="p_1"
+            src="https://wx2.sinaimg.cn/mw690/007RARhYly1gbetkywlevj30go0goaa9.jpg"/>
+            <text id="check_1">打卡</text>
+        </view>
+      
   </view>
   </swiper-item> 
   <swiper-item>
       <view class='swiper_con'>
-          welcome come to 成人
+        <view bindtap="toast" class="usermotto">
+            <image id="p_2" 
+            src="https://wx1.sinaimg.cn/mw690/007RARhYly1gbevf9wpzfj301s01s3y9.jpg"/>
+            <text id="check">打卡</text>
+        </view>
       </view>
       </swiper-item>
 </swiper>

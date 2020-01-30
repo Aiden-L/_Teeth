@@ -4,7 +4,8 @@
     "pages/movie/movie",
     "pages/clock/clock",
     "pages/data/data",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/Sign_in/Sign_in"
   ],
   "window": {
     "backgroundTextStyle": "light",
