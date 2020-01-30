@@ -4,4 +4,17 @@
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 1px solid #f00; color: #f00;}
 .swiper{width: 100%;}
-
+.b{
+  height: 100%;
+  width: 50%;
+  color:blue;
+}
+.canvass {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 200px;
+  color: #49f;
+  font-size: 50rpx;
+}
