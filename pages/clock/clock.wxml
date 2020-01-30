@@ -10,6 +10,7 @@
             src="https://wx2.sinaimg.cn/mw690/007RARhYly1gbetkywlevj30go0goaa9.jpg"/>
             <text id="check_1">打卡</text>
         </view>
+        <!-- 倒计时 -->
       <button class="b" bindtap="but">倒计时开始</button>
       <view class="page-body">
         <view class="page-body-wrapper">
