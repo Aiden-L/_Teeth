@@ -4,20 +4,22 @@
     <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>成人</view>
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
-  <swiper-item><view class='swiper_con'>
+  <swiper-item>
+    <view class='swiper_con'>
       <view bindtap="toast" class="usermotto">
             <image id="p_1"
             src="https://wx2.sinaimg.cn/mw690/007RARhYly1gbetkywlevj30go0goaa9.jpg"/>
             <text id="check_1">打卡</text>
         </view>
         <!-- 倒计时 -->
-      <button class="b" bindtap="but">开始刷牙</button>
+      <button class="b" bindtap="but">{{text}}</button>
       <view class="page-body">
         <view class="page-body-wrapper">
            <canvas canvas-id="canvass" class="canvass">{{innerText}}</canvas>
         </view>
       </view>
-  </view>
+      <!-- 倒计时 -->
+    </view>  
   </swiper-item> 
   <swiper-item>
       <view class='swiper_con'>
@@ -26,6 +28,14 @@
             src="https://wx1.sinaimg.cn/mw690/007RARhYly1gbevf9wpzfj301s01s3y9.jpg"/>
             <text id="check">打卡</text>
         </view>
+         <!-- 倒计时 -->
+      <button class="b" bindtap="but">{{text}}</button>
+      <view class="page-body">
+        <view class="page-body-wrapper">
+           <canvas canvas-id="canvass" class="canvass">{{innerText}}</canvas>
+        </view>
+      </view>
+      <!-- 倒计时 -->
       </view>
       </swiper-item>
 </swiper>

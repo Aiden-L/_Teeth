@@ -1,3 +1,5 @@
+var intervalT;
+var context = wx.createCanvasContext('canvass');
 Page({
 
   /**
@@ -5,6 +7,8 @@ Page({
    */
   data: {
       currentData : 0,
+      text:'开始刷牙',
+      innerText:120
   },
     //事件处理函数 点击text
     toast: function() {
@@ -16,6 +20,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
+  onReady: function (){
+      context.setLineWidth(4);
+      context.moveTo(180, 100);
+      context.arc(100, 100, 80, 0, -Math.PI * 2 / 120 * 120, true);
+      context.setStrokeStyle("#49f");
+      context.stroke();
+      context.restore();
+      context.draw();
+
   },
   //获取当前滑块的index
   bindchange:function(e){
@@ -41,16 +56,23 @@ Page({
     console.error(e.detail.errMsg)
   },
   but:function(e){
-    var flag=getApp().globalData.flag;
-    console.log(flag);
-    if(flag==true)
-    {
-      return;
-    }
-    getApp().globalData.flag=true;
-    console.log(flag);
+    clearInterval(intervalT);//重新清空开始画圆
+    this.setData({
+      text:'重新开始'
+     })
+   
+    // var flag=getApp().globalData.flag;
+    // console.log(flag);
+    // if(flag==true)
+    // {
+    //   return;
+    // }
+    // getApp().globalData.flag=true;
+    // console.log(flag);
+
+
     // 使用 wx.createContext 获取绘图上下文 context
-    var context = wx.createCanvasContext('canvass');
+    
     var n = 120;     // 倒计时圈中的文字显示
     this.setData({ "innerText": n });
     var _this = this;
@@ -64,6 +86,7 @@ Page({
       context.draw();    // draw-将之前在绘图上下文中的描述(路径，变形，样式)画到canvas中
     }
     function drawOutCircle(n) {    // 绘制倒计时外圈圆
+      
       context.save();
       context.setLineWidth(4)
       context.moveTo(180, 100)
@@ -71,7 +94,7 @@ Page({
       context.stroke()
       context.restore();
     }
-    var intervalT = setInterval(function () {
+      intervalT = setInterval(function () {
       context.setStrokeStyle("#49f");    // setStrokeStyle-设置描边颜色；参数-setStrokeStyle(描边的颜色，默认颜色为black)
       if (n >= 0) {
         _this.setData({ "innerText": n });
