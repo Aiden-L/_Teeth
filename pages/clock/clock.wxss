@@ -29,10 +29,17 @@
     position: absolute;
 }
 .b{
-  height: 50%;
-  width: 50%;
+  height: 50px;
+  width: 100px;
   color:blue;
+  bottom: 120px;
+  left: 140px;
+  margin: 0,auto;
+  position: absolute;
+
+  
 }
+
 .canvass {
   width: 200px;
   height: 200px;
@@ -42,5 +49,6 @@
   color: #49f;
   font-size: 50rpx;
   margin: 0 auto;
-  top: 85px;
+  top: 50px;
 }
+

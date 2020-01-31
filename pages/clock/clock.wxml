@@ -11,7 +11,7 @@
             <text id="check_1">打卡</text>
         </view>
         <!-- 倒计时 -->
-      <button class="b" bindtap="but">倒计时开始</button>
+      <button class="b" bindtap="but">开始刷牙</button>
       <view class="page-body">
         <view class="page-body-wrapper">
            <canvas canvas-id="canvass" class="canvass">{{innerText}}</canvas>
