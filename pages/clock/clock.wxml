@@ -18,8 +18,9 @@
            <canvas canvas-id="canvass" class="canvass">{{innerText}}</canvas>
         </view>
       </view>
-      <Select prop-array='{{selectArray}}'></Select>
       <!-- 倒计时 -->
+      <Select prop-array='{{selectArray}}' class="s"></Select>
+      <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
     </view>  
   </swiper-item> 
   <swiper-item>
