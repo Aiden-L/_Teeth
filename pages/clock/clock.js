@@ -16,11 +16,11 @@ Page({
       _text:'开始刷牙',
       selectShow: false,
       selectArray: [{
-        "id": "1",
-        "text": "电动牙刷"
-      }, {
-        "id": "2",
+        "id": "0",
         "text": "自动牙刷"
+      }, {
+        "id": "1",
+        "text": "普通牙刷"
       }],
       poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
       name: '此时此刻',
@@ -86,13 +86,7 @@ Page({
 },
 
   item_change:function(e){
-      const that=this;
-     
-     that.setData({
-        current_choice: e.target.dataset.index
-      })
-      console.log(current_choice);
-
+    current_choice=e.detail.text;
   },
   but:function(e){
     clearInterval(intervalT);//重新清空开始画圆
@@ -113,11 +107,11 @@ Page({
     // 使用 wx.createContext 获取绘图上下文 context
     console.log(current_choice);
     var n;
-    if(current_choice==1)
+    if(current_choice=="自动牙刷")
       {
           n = 120;
       }
-    if(current_choice==2)
+    if(current_choice=="普通牙刷")
       {
           n = 180;
       }   

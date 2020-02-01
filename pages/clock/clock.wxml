@@ -25,7 +25,7 @@
       <!-- 选择框 -->
       <view class="choice">
         <text class="_type">请选择牙刷类型</text>
-        <Select class="Choose" prop-array='{{selectArray}}' bindtap="item_change" ></Select>
+        <Select class="Choose" prop-array='{{selectArray}}' bind:myget="item_change"  ></Select>
       </view>
       
     </view>  
