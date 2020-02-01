@@ -73,3 +73,15 @@
   margin: 0 auto;
   top: 50px;
 }
+.choice{
+  position: absolute;
+  left: 120px;
+  top: 310px;
+  height: 32px;
+  width: 100%;
+  display: flex;
+}
+._type{
+  position: relative;
+  left: -80px;
+}

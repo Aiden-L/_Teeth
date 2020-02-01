@@ -2,6 +2,7 @@ var intervalT;
 var IntervalT;
 var context = wx.createCanvasContext('canvass');
 var Context = wx.createCanvasContext('Can');
+var current_choice=999;
 Page({
 
   /**
@@ -13,11 +14,12 @@ Page({
       innerText:120,
       _Text:120,
       _text:'开始刷牙',
+      selectShow: false,
       selectArray: [{
-        "id": "10",
+        "id": "1",
         "text": "电动牙刷"
       }, {
-        "id": "21",
+        "id": "2",
         "text": "自动牙刷"
       }],
       poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
@@ -54,6 +56,7 @@ Page({
 
       that.setData({
         currentData: e.target.dataset.current
+
       })
     }
   },
@@ -81,6 +84,16 @@ Page({
     this.audioCtx = wx.createAudioContext('myAudio')
 
 },
+
+  item_change:function(e){
+      const that=this;
+     
+     that.setData({
+        current_choice: e.target.dataset.index
+      })
+      console.log(current_choice);
+
+  },
   but:function(e){
     clearInterval(intervalT);//重新清空开始画圆
     this.setData({
@@ -98,9 +111,17 @@ Page({
 
 
     // 使用 wx.createContext 获取绘图上下文 context
-    
-    var n = 120;     // 倒计时圈中的文字显示
-    this.setData({ "innerText": n });
+    console.log(current_choice);
+    var n;
+    if(current_choice==1)
+      {
+          n = 120;
+      }
+    if(current_choice==2)
+      {
+          n = 180;
+      }   
+    this.setData({ "innerText": n });// 倒计时圈中的文字显示
     var _this = this;
     function drawInnerCircle() {    // 绘制固定内圈圆
       context.save();              // save-保存绘图上下文
@@ -114,10 +135,10 @@ Page({
     function drawOutCircle(n) {    // 绘制倒计时外圈圆
       
       context.save();
-      context.setLineWidth(4)
-      context.moveTo(180, 100)
-      context.arc(100, 100, 80, 0, -Math.PI * 2 / 120 * n, true)
-      context.stroke()
+      context.setLineWidth(4);
+      context.moveTo(180, 100);
+      context.arc(100, 100, 80, 0, -Math.PI * 2 / 120 * n, true);
+      context.stroke();
       context.restore();
     }
       intervalT = setInterval(function () {

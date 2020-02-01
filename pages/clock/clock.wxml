@@ -19,8 +19,15 @@
         </view>
       </view>
       <!-- 倒计时 -->
-      <Select prop-array='{{selectArray}}' class="s"></Select>
+      <!-- 音频 -->
       <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+      
+      <!-- 选择框 -->
+      <view class="choice">
+        <text class="_type">请选择牙刷类型</text>
+        <Select class="Choose" prop-array='{{selectArray}}' bindtap="item_change" ></Select>
+      </view>
+      
     </view>  
   </swiper-item> 
   <swiper-item>
@@ -38,6 +45,11 @@
         </view>
       </view>
       <!-- 倒计时 -->
+       <!-- 选择框 -->
+      <view class="choice">
+        <text class="_type">请选择牙刷类型</text>
+        <Select class="Choose" prop-array='{{selectArray}}' bindchange="item_change"></Select>
+      </view>
       </view>
       </swiper-item>
 </swiper>
