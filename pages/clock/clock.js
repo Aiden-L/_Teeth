@@ -13,6 +13,13 @@ Page({
       innerText:120,
       _Text:120,
       _text:'开始刷牙',
+      selectArray: [{
+        "id": "10",
+        "text": "电动牙刷"
+      }, {
+        "id": "21",
+        "text": "自动牙刷"
+      }]
   },
     //事件处理函数 点击text
     toast: function() {
@@ -115,6 +122,7 @@ Page({
         n -= 1;
       } else {
         clearInterval(intervalT);     // 倒计时一次停止
+        context.clearRect(0,0,200,200);
       }
       drawInnerCircle();
     }, 1000);

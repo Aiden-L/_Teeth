@@ -36,8 +36,6 @@
   left: 140px;
   margin: 0,auto;
   position: absolute;
-
-  
 }
 
 .canvass {
