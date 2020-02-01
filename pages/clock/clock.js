@@ -172,7 +172,6 @@ Page({
 
 
     // 使用 wx.createContext 获取绘图上下文 context
-<<<<<<< HEAD
     
     var n;// 倒计时圈中的文字显示
     var m;
@@ -186,19 +185,6 @@ Page({
           n = 180;
           m = 180;
       }    
-=======
-    console.log(current_choice);
-    var n;
-    var m;
-    if (current_choice == "自动牙刷") {
-      n = 120;
-      m = 120;
-    }
-    if (current_choice == "普通牙刷") {
-      n = 180;
-      m = 180;
-    }   
->>>>>>> master
     this.setData({ "_Text": n });
     var _this = this;
     function drawInnerCircle() {    // 绘制固定内圈圆
