@@ -29,10 +29,10 @@
             <text id="check">打卡</text>
         </view>
          <!-- 倒计时 -->
-      <button class="b" bindtap="but">{{text}}</button>
+      <button class="a" bindtap="But">{{_text}}</button>
       <view class="page-body">
         <view class="page-body-wrapper">
-           <canvas canvas-id="canvass" class="canvass">{{innerText}}</canvas>
+           <canvas canvas-id="Can" class="c">{{_Text}}</canvas>
         </view>
       </view>
       <!-- 倒计时 -->
