@@ -107,13 +107,16 @@ Page({
     // 使用 wx.createContext 获取绘图上下文 context
     console.log(current_choice);
     var n;
+    var m;
     if(current_choice=="自动牙刷")
       {
           n = 120;
+          m = 120;
       }
     if(current_choice=="普通牙刷")
       {
           n = 180;
+          m = 180;
       }   
     this.setData({ "innerText": n });// 倒计时圈中的文字显示
     var _this = this;
@@ -131,7 +134,7 @@ Page({
       context.save();
       context.setLineWidth(4);
       context.moveTo(180, 100);
-      context.arc(100, 100, 80, 0, -Math.PI * 2 / 120 * n, true);
+      context.arc(100, 100, 80, 0, -Math.PI * 2 / m * n, true);
       context.stroke();
       context.restore();
     }
@@ -165,8 +168,17 @@ Page({
 
 
     // 使用 wx.createContext 获取绘图上下文 context
-    
-    var n = 120;     // 倒计时圈中的文字显示
+    console.log(current_choice);
+    var n;
+    var m;
+    if (current_choice == "自动牙刷") {
+      n = 120;
+      m = 120;
+    }
+    if (current_choice == "普通牙刷") {
+      n = 180;
+      m = 180;
+    }   
     this.setData({ "_Text": n });
     var _this = this;
     function drawInnerCircle() {    // 绘制固定内圈圆
@@ -183,7 +195,7 @@ Page({
       Context.save();
       Context.setLineWidth(4)
       Context.moveTo(180, 100)
-      Context.arc(100, 100, 80, 0, -Math.PI * 2 / 120 * n, true)
+      Context.arc(100, 100, 80, 0, -Math.PI * 2 / m * n, true)
       Context.stroke()
       Context.restore();
     }
