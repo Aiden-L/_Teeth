@@ -148,6 +148,35 @@ Page({
         _this.setData({ "innerText": n });
         drawOutCircle(n);
         n -= 1;
+        if(m==120)
+        {
+          if(n/30==0)
+          {
+            //添加音效
+            const innerAudioContext = wx.createInnerAudioContext()
+            innerAudioContext.autoplay = true  // 是否自动开始播放，默认为 false
+            innerAudioContext.loop = false  // 是否循环播放，默认为 false
+            wx.setInnerAudioOption({ // ios在静音状态下能够正常播放音效
+              obeyMuteSwitch: false,   // 是否遵循系统静音开关，默认为 true。当此参数为 false 时，即使用户打开了静音开关，也能继续发出声音。
+              success: function (e) {
+                console.log(e)
+                console.log('play success')
+              },
+              fail: function (e) {
+                console.log(e)
+                console.log('play fail')
+              }
+            })
+            innerAudioContext.src = 'http://downsc.chinaz.net/Files/DownLoad/sound1/201908/11827.mp3';  // 音频资源的地址
+            innerAudioContext.onPlay(() => {  // 监听音频播放事件
+              console.log('开始播放')
+            })
+            innerAudioContext.onError((res) => { // 监听音频播放错误事件
+              console.log(res.errMsg)
+              console.log(res.errCode)
+            })
+          }
+        }
       } else {
         clearInterval(intervalT);     // 倒计时一次停止
         context.clearRect(0,0,200,200);
