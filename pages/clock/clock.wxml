@@ -45,6 +45,8 @@
         </view>
       </view>
       <!-- 倒计时 -->
+      <!-- 音频 -->
+      <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
        <!-- 选择框 -->
       <view class="choice">
         <text class="_type">请选择牙刷类型</text>
