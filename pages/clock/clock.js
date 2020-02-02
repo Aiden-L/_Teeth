@@ -112,15 +112,18 @@ Page({
     // 使用 wx.createContext 获取绘图上下文 context
     var n;
     var m;
+    var x;
     if(current_choice=="自动牙刷")
       {
           n = 120;
           m = 120;
+          x = 30;
       }
     if(current_choice=="普通牙刷")
       {
           n = 180;
           m = 180;
+          x = 45;
       }   
     this.setData({ "innerText": n });// 倒计时圈中的文字显示
     var _this = this;
@@ -148,34 +151,16 @@ Page({
         _this.setData({ "innerText": n });
         drawOutCircle(n);
         n -= 1;
-        if(m==120)
+        if(n%x==0)
         {
-          if(n/30==0)
-          {
-            //添加音效
-            const innerAudioContext = wx.createInnerAudioContext()
-            innerAudioContext.autoplay = true  // 是否自动开始播放，默认为 false
-            innerAudioContext.loop = false  // 是否循环播放，默认为 false
-            wx.setInnerAudioOption({ // ios在静音状态下能够正常播放音效
-              obeyMuteSwitch: false,   // 是否遵循系统静音开关，默认为 true。当此参数为 false 时，即使用户打开了静音开关，也能继续发出声音。
-              success: function (e) {
-                console.log(e)
-                console.log('play success')
-              },
-              fail: function (e) {
-                console.log(e)
-                console.log('play fail')
-              }
-            })
-            innerAudioContext.src = 'http://downsc.chinaz.net/Files/DownLoad/sound1/201908/11827.mp3';  // 音频资源的地址
-            innerAudioContext.onPlay(() => {  // 监听音频播放事件
-              console.log('开始播放')
-            })
-            innerAudioContext.onError((res) => { // 监听音频播放错误事件
-              console.log(res.errMsg)
-              console.log(res.errCode)
-            })
-          }
+          const innerAudioContext = wx.createInnerAudioContext();//新建一个createInnerAudioContext();
+          innerAudioContext.autoplay = true;//音频自动播放设置
+          innerAudioContext.src = "http://downsc.chinaz.net/Files/DownLoad/sound1/201706/8858.mp3";//链接到音频的地址
+          innerAudioContext.onPlay(() => { });//播放音效
+          innerAudioContext.onError((res) => {//打印错误
+            console.log(res.errMsg);//错误信息
+            console.log(res.errCode);//错误码
+          })
         }
       } else {
         clearInterval(intervalT);     // 倒计时一次停止
@@ -204,15 +189,18 @@ Page({
     
     var n;// 倒计时圈中的文字显示
     var m;
+    var x;
     if(Current_choice=="自动牙刷")
       {
           n = 120;
           m = 120;
+          x = 30;
       }
     if(Current_choice=="普通牙刷")
       {
           n = 180;
           m = 180;
+          x = 45;
       }    
     this.setData({ "_Text": n });
     var _this = this;
@@ -240,6 +228,17 @@ Page({
         _this.setData({ "_Text": n });
         drawOutCircle(n);
         n -= 1;
+        if(n%x==0)
+        {
+          const innerAudioContext = wx.createInnerAudioContext();//新建一个createInnerAudioContext();
+          innerAudioContext.autoplay = true;//音频自动播放设置
+          innerAudioContext.src = "http://downsc.chinaz.net/Files/DownLoad/sound1/201706/8858.mp3";//链接到音频的地址
+          innerAudioContext.onPlay(() => { });//播放音效
+          innerAudioContext.onError((res) => {//打印错误
+            console.log(res.errMsg);//错误信息
+            console.log(res.errCode);//错误码
+          })
+        }
       } else {
         clearInterval(IntervalT);     // 倒计时一次停止
       }
