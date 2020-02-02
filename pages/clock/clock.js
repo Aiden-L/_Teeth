@@ -26,7 +26,7 @@ Page({
     poster: 'http://p1.music.126.net/GlV130UzFe2hEofOpo9k2g==/109951163314358137.jpg?param=130y130',
       name: '刷牙歌',
       author: '宝宝巴士',
-      src: 'http://music.163.com/song/media/outer/url?id=566443217.mp3',
+      src: 'https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786',
   },
     //事件处理函数 点击text
     toast: function() {
@@ -93,6 +93,7 @@ Page({
   Item_change:function(e){
     Current_choice=e.detail.text;
   },
+
   but:function(e){
     clearInterval(intervalT);//重新清空开始画圆
     this.setData({
@@ -155,12 +156,12 @@ Page({
         {
           const innerAudioContext = wx.createInnerAudioContext();//新建一个createInnerAudioContext();
           innerAudioContext.autoplay = true;//音频自动播放设置
-          innerAudioContext.src = "http://downsc.chinaz.net/Files/DownLoad/sound1/201706/8858.mp3";//链接到音频的地址
-          innerAudioContext.onPlay(() => { });//播放音效
+          innerAudioContext.src = 'http://downsc.chinaz.net/Files/DownLoad/sound1/201908/11827.mp3';//链接到音频的地址
+          innerAudioContext.onPlay(() => {});//播放音效
           innerAudioContext.onError((res) => {//打印错误
-            console.log(res.errMsg);//错误信息
-            console.log(res.errCode);//错误码
-          })
+          console.log(res.errMsg);//错误信息
+          console.log(res.errCode);//错误码
+})
         }
       } else {
         clearInterval(intervalT);     // 倒计时一次停止
